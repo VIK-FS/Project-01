@@ -1,0 +1,46 @@
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button:active {
+  background-color: #3e8e41;
+}
+
+.button.minus {
+  background-color: #f44336;
+}
+
+.button.minus:hover {
+  background-color: #d32f2f;
+}
+
+.button.minus:active {
+  background-color: #b71c1c;
+}
+
+.button.reset {
+  background-color: #9e9e9e;
+}
+
+.button.reset:hover {
+  background-color: #757575;
+}
+
+.button.reset:active {
+  background-color: #616161;
+}

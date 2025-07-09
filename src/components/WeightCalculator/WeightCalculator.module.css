@@ -1,0 +1,71 @@
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputField {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.selectField {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.submitButton {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.messageBox {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.overweight {
+  background-color: #ffcccc;
+}
+
+.underweight {
+  background-color: #fff3cc;
+}
+
+.normal {
+  background-color: #ccffcc;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 0.9em;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #ffcccc;
+  border-radius: 4px;
+  background-color: #fff0f0;
+}

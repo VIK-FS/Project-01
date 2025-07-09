@@ -1,16 +1,22 @@
+import type { FC } from "react";
+import styles from './ProfileCard.module.css';
+
 interface Props {
     avatar: string;
     name: string;
     description: string;
-    width?: string;
+    className?: string;
   }
   
-  export default function ProfileCard({ avatar, name, description, width }: Props) {
+  const ProfileCard: FC<Props> = ({ avatar, name, description, className }: Props) => {
+
     return (
-      <div style={{ width }}>
-        <img src={avatar} alt="User avatar" style={{ width: '100%' }} />
-        <h2>{name}</h2>
+      <div className={`${styles['user-card']} ${className}`} >
+      <h2>{name}</h2>
+        <img src={avatar} alt="User avatar" />
         <p>{description}</p>
       </div>
     );
   }
+
+  export default ProfileCard

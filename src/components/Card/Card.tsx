@@ -1,3 +1,5 @@
+
+
 interface CardProps {
     url: string;
     alt?: string; 

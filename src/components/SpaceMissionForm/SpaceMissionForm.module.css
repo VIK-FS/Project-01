@@ -1,0 +1,33 @@
+.formContainer {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid rgb(226, 230, 235);
+  border-radius: 8px;
+  background: #ecd0aa94;
+}
+
+.inputField,
+.selectField {
+  width: 95%;
+  padding: 0.8rem;
+  margin: 0.5rem 0 1.5rem;
+  background: #8f969e;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  color: #ecf0f1;
+  font-size: 1rem;
+}
+
+.message {
+  padding: 1rem;
+  background: #27ae60;
+  border-radius: 4px;
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.message p {
+  margin: 0;
+}
