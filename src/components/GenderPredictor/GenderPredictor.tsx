@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./GenderPredictor.module.css";
 
 interface NameInfo {
   name: string;
@@ -12,6 +13,11 @@ const key = import.meta.env.VITE_GENDER_API_KEY;
 export const GenderPredictor = () => {
   const [name, setName] = useState("Fred");
   const [nameInfo, setNameInfo] = useState<NameInfo | undefined>(undefined);
+  const [darkMode, setDarkMode] = useState(false);
+
+  function toggleTheme() {
+    setDarkMode(!darkMode);
+  }
 
   function handleRevealGender() {
     fetchGender(name);
@@ -26,26 +32,47 @@ export const GenderPredictor = () => {
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+    <div className={styles.container} data-theme={darkMode ? 'dark' : 'light'}>
+      <div className={styles.inputGroup}>
+        <input
+          className={styles.input}
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter name"
+        />
+        <button className={styles.button} type="button" onClick={handleRevealGender}>
+          Reveal gender
+        </button>
+        <button className={styles.themeToggle} type="button" onClick={toggleTheme}>
+          {darkMode ? '🌞 Light' : '🌙 Dark'}
+        </button>
+      </div>
 
-      <button type="button" onClick={handleRevealGender}>
-        Reveal gender
-      </button>
-
-      {nameInfo ? (
-        <div>
-          <span>Name: {nameInfo.name}</span>
-          <span>Gender: {nameInfo.gender}</span>
-          <span>Country: {nameInfo.country}</span>
-          <span>Probability: {nameInfo.probability}</span>
-          <span>Remaining credits: {nameInfo.remaining_credits}</span>
+      {nameInfo && (
+        <div className={styles.card}>
+          <div className={styles.cardItem}>
+            <span className={styles.cardLabel}>Name:</span>
+            <span className={styles.cardValue}>{nameInfo.name.trim().charAt(0).toUpperCase() + nameInfo.name.trim().slice(1)}</span>
+          </div>
+          <div className={styles.cardItem}>
+            <span className={styles.cardLabel}>Gender:</span>
+            <span className={styles.cardValue}>{nameInfo.gender}</span>
+          </div>
+          <div className={styles.cardItem}>
+            <span className={styles.cardLabel}>Country:</span>
+            <span className={styles.cardValue}>{nameInfo.country}</span>
+          </div>
+          <div className={styles.cardItem}>
+            <span className={styles.cardLabel}>Probability:</span>
+            <span className={styles.cardValue}>{nameInfo.probability}%</span>
+          </div>
+          <div className={styles.cardItem}>
+            <span className={styles.cardLabel}>Remaining credits:</span>
+            <span className={styles.cardValue}>{nameInfo.remaining_credits}</span>
+          </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
-};
+}

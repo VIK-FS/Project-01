@@ -1,0 +1,15 @@
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #646cff;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

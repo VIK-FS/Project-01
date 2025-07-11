@@ -11,6 +11,8 @@ export const NavBar = () => {
         <Link to="/age-predictor">Age predictor</Link>
         <Link to="/counter">Counter</Link>
         <Link to="/pony">Pony</Link>
+        <Link to={ROUTES.ABOUT}>About</Link>
+        <Link to={ROUTES.CONTACT}>Contact</Link>
       </nav>
     </>
   );

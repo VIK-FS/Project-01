@@ -4,6 +4,8 @@ export const ROUTES = {
     GENDER_PREDICTOR: "/gender-predictor",
     AGE_PREDICTOR: "/age-predictor",
     COUNTER: "/counter",
+    ABOUT: "/about",
+    CONTACT: "/contact",
     // NOT_FOUND: "*",
 } as const;
     
